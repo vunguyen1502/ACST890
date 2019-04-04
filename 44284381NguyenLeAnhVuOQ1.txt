@@ -1,0 +1,33 @@
+#Question 1
+#Part a)
+curl -s https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh > triplet-stop.sh
+
+#Part b)
+chmod u+x triplet-stop.sh
+
+# Use the code nano triplet-stop.sh to modify the code
+# Test code
+./triplet-stop.sh gggtaa123gggtaa
+
+#Question 2
+#Part a)
+scp -i 44284381.pem tutes.txt ubuntu@ec2-13-239-115-68.ap-southeast-2.compute.amazonaws.com:
+
+#Part b)
+cat tutes.txt | grep -oE '\w+' | sort | uniq
+cat tutes.txt | sort | uniq
+
+#Question 3.11.2
+gawk 'NF==3' 11.2.txt
+
+#Question 3.11.3
+egrep -o '\-[0-9]+' 11.3.txt
+
+#Question 3.11.4
+egrep -o '( +\-[0-9]+\.[0-9]+ +| +[0-9]+\.[0-9]+ +)' 11.4.txt
+
+#The code below is for reference. Read the pdf for more information
+egrep -o '(\-[0-9]+\.[0-9]+|\b[0-9]+\.[0-9]+)' 11.4.txt
+
+#Question 3.11.6
+egrep -i '\bhydrogenase\b' 11.6.txt | egrep -iv '\bdehydrogenase\b'
