@@ -1,0 +1,29 @@
+#Question 12.1 (Downloading the file)
+curl -s https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
+
+#Question 12.1
+sed 's/Beisel/Weisel/' structure.pdb
+
+#Question 12.2
+sed '1,3d' structure.pdb
+
+#Question 12.3
+sed -n '5,10p' structure.pdb
+
+#Question 12.4
+sed '/MET/d' structure.pdb
+
+#Question 12.5
+sed -n '/HELIX.*ILE/p' structure.pdb
+
+#Question 12.6
+sed '/^H/s/$/***/' structure.pdb
+
+#Question 12.7
+sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+
+#Question 12.8 (Uploading the file)
+scp -i 44284381.pem jabberwocky.txt ubuntu@ec2-13-239-115-68.ap-southeast-2.compute.amazonaws.com:
+
+#Question 12.8
+sed '/^[[:space:]]/d' jabberwocky.txt
