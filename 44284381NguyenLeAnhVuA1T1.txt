@@ -1,0 +1,56 @@
+#Question 1
+sed 's/Huck/HucK/g' twain.txt
+
+#Question 3
+#!/usr/bin/python3
+x = int(input('Input number: '))
+if x<0:
+        print('Must be positive integer')
+elif x%4 == 0:
+        print('This is a leap year')
+else:
+        print('This is not a leap year')
+
+#Question 4
+#!usr/bin/python3
+import random as rd
+a = int(input('Input limit (a): '))
+b = int(input('Input limit (b): '))
+if a<b:
+        x = rd.randint(a,b)
+        print('Your random number is: ',x)
+else:
+        x = rd.randint(b,a)
+        print('Your random number is: ',x)
+
+#Question 5
+#!usr/bin/python3
+m = int(input('Input month: '))
+d = int(input('Input date: '))
+if m==0 or d==0 or m>12 or d>31:
+        print('Invalid date')
+elif m in [4,6,9,11] and d>30:
+        print('Invalid date')
+elif m==2 and d>29:
+        print('Invalid date')
+elif m in [3,4,5,6]:
+        if d<20 and m==3:
+                print('False')
+        elif d>20 and m==6:
+                print('False')
+        else:
+                print('True')
+else:
+        print('False')
+
+#Question 6
+#!usr/bin/python3
+
+from math import *
+P=float(input('Input principle amount: '))
+r=float(input('Input annual interest rate: '))
+t=float(input('Input number of years: '))
+
+a=P*(e**(r*t))
+
+print(a)
